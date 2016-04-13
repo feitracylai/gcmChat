@@ -21,12 +21,11 @@ class DbConnect {
         include_once dirname(__FILE__) . '/config.php';
 
         // Connecting to mysql database
-        $this->conn = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD);
-        mysql_select_db (DB_NAME);
+        $this->conn = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, 3306);
 
         // Check for database connection error
-        if (mysql_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysql_connect_error();
+        if (mysqli_connect_errno()) {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
 
         // returing connection resource
