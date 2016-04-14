@@ -21,7 +21,8 @@ class DbConnect {
         include_once dirname(__FILE__) . '/config.php';
 
         // Connecting to mysql database
-        $this->conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, 3306);
+        //$this->conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, 3306);
+        $this->conn = mysqli_connect($_SERVER['DB_HOST'], $_SERVER['DB_USERNAME'], $_SERVER['DB_PASSWORD'], $_SERVER['DB_NAME'], $_SERVER['DB_PORT'])
 
         // Check for database connection error
         if (mysqli_connect_errno()) {
