@@ -22,7 +22,7 @@ class DbConnect {
 
         // Connecting to mysql database
         //$this->conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, 3306);
-        $this->conn = mysqli_connect($_SERVER['gcmchat.c81l6jttxgta.us-east-1.rds.amazonaws.com'], $_SERVER['root'], $_SERVER['2439Lona'], $_SERVER['gcm_chat'], $_SERVER['3306']);
+        $this->conn = mysqli_connect('gcmchat.c81l6jttxgta.us-east-1.rds.amazonaws.com', 'root', '2439Lona', 'gcm_chat', 3306);
 
         // Check for database connection error
         if (mysqli_connect_errno()) {
